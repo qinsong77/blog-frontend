@@ -10,18 +10,19 @@ import { getToken } from '../common/auth'
 Vue.use(Router)
 
 const router = new Router({
-  mode: 'hash',
-  base: process.env.BASE_URL,
-  scrollBehavior: () => ({ y: 0 }),
-  routes: routes
+    mode: 'hash',
+    base: process.env.BASE_URL,
+    scrollBehavior: () => ({ y: 0 }),
+    routes: routes
 })
 
 router.beforeEach((to, from, next) => {
-  // NProgress.start()
+    // NProgress.start()
+    next()
 })
 
 router.afterEach((to) => {
-  document.title = to.meta.title || 'Sysuke\'s Blog Admin'
+    document.title = to.meta.title || 'Sysuke\'s Blog'
 })
 router.onError((err) => {
 })
