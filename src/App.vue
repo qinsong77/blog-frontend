@@ -6,7 +6,7 @@
 
 <style lang="scss">
     #app {
-        height: 100%;
+        min-height: 100%;
         background: $app-bg;
         color: $text;
         -moz-osx-font-smoothing: grayscale;

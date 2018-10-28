@@ -2,10 +2,14 @@ import layout from '_c/layout'
 
 const routes = [
     {
+        path: "*",
+        redirect: "/"
+    },
+    {
         path: '/',
         name: 'main',
         component: layout,
-        redirect: ' /blog',
+        redirect: '/blog',
         children: [
             {
                 path: '/blog',

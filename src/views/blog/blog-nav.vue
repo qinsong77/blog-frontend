@@ -32,9 +32,10 @@
 
 <style lang="scss">
     .blog-nav{
-        background: red;
+        top:76px;
+        background: #5394ec;
         position: fixed;
-        width:15%;
+        width:210px;
     }
 
 </style>

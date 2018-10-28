@@ -31,7 +31,8 @@
     .blog-container{
         background: $container-bg;
         >.blog-main-container{
-            margin-left: 15%;
+            margin-left: 210px;
+            padding: $container-pd;
         }
     }
 </style>
