@@ -1,120 +1,49 @@
 <template>
     <div class="blog-right-box">
-        <div class="input-container">
-            <input v-model="search" required placeholder="search me"/>
-            <button class="search-btn">
-                <i class="iconfont icon-search"></i>
-            </button>
-        </div>
-        <div class="top-list-container">
-            <p class="title">
-                <i class="iconfont icon-vertical-align-top"></i>
-                TOP LIST
-            </p>
-            <ul class="top-list">
-                <li v-for="(value,key,index) in items" :key="key">
-                    <span class="index">{{index+1}}</span>
-                    <a>{{value}}</a>
-                </li>
-            </ul>
+        <div>
+            <label>theme：</label>
+            <input type="radio" v-bind:checked="checked" v-on:change="setT"/>
+            <!--<switch-btn v-model="theme"/>-->
         </div>
     </div>
 </template>
 
 <script>
+    import SwitchBtn from '_c/switch-btn'
+    import { mapState, mapMutations } from 'vuex'
+
     export default {
         name: 'blog-right-box',
+        components: { SwitchBtn },
         data () {
             return {
-                search: '',
-                items: {
-                    'dsjfkas': '发贺卡1',
-                    'dsj1fkas': '发贺卡2',
-                    'dsjfekas': '发贺卡3',
-                    'dsjfkeas': '发贺卡4',
-                    'dsjfek2as': '发贺卡5'
-                }
+                checked: false
             }
         },
-        computed: {},
+        computed: {
+            ...mapState({
+                theme: state => state.theme
+            })
+        },
 
-        methods: {}
+        methods: {
+            ...mapMutations,
+            setT (e) {
+                if (e.target.checked) {
+                    this.$store.commit('setTheme', 'theme-dark')
+                }
+            }
+        }
     }
 </script>
 
 <style lang="scss">
-    .blog-right-box{
-        width: 210px;
+    .blog-right-box {
+        width: 200px;
         height: 100%;
-        margin-left:10px;
-        >div{
+        margin-left: 10px;
+        > div {
             background: $container-bg;
-        }
-        .input-container{
-            padding: 5px 10px;
-            display: flex;
-            >input{
-                box-sizing: border-box;
-                width: 100%;
-                height: 30px;
-                background: $module-hover-bg;
-                border: none;
-                padding: 3px 7px;
-                outline:0;
-                &:focus:invalid{
-                    border-color: #ee3900;
-                    color: #ff5722;
-                }
-            }
-            .search-btn{
-                border: none;
-                outline:0;
-                padding: 3px 7px;
-                cursor: pointer;
-            }
-        }
-        .top-list-container{
-            margin-top: 15px;
-            .title{
-                >i{
-                    font-size: 20px;
-                    margin-right: 5px;
-                }
-                padding: 12px 10px;
-                border-bottom: 1px dashed $app-bg;
-            }
-            .top-list li{
-                padding: 12px 10px;
-                &:first-child .index{
-                    background-color: rgba(245, 24, 11, 0.6);
-                }
-                &:nth-child(2) .index{
-                    background-color: rgba(245, 144, 13, 0.6);
-                }
-                &:nth-child(3) .index{
-                    background-color: rgba(0,136,245,.6);
-                }
-                >.index{
-                    color: $text-reversal;
-                    counter-increment: hot-article-list;
-                    background-color: $module-hover-bg;
-                    width: 1.5em;
-                    height: 1.5em;
-                    line-height: 1.5em;
-                    display: inline-block;
-                    text-align: center;
-                    margin-right: .5em;
-                    font-size: .8em;
-                }
-                a{
-                    cursor: pointer;
-                    transition: margin-left .2s linear;
-                    &:hover{
-                        text-decoration: underline;
-                        margin-left: 10px;
-                    }
-                }
-            }
         }
     }
 </style>

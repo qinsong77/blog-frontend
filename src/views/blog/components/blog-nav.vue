@@ -19,12 +19,15 @@
                 </router-link>
             </li>
         </ul>
+        <search-top-list/>
     </div>
 </template>
 
 <script>
+    import SearchTopList from './search-top-list'
     export default {
         name: 'blog-nav',
+        components: { SearchTopList },
         data () {
             return {}
         },
@@ -44,20 +47,19 @@
     .blog-nav {
         top: 66px;
         position: fixed;
-        width: 210px;
+        width: 200px;
         background: $app-bg;
         transition: all 0.4s cubic-bezier(0.4, 0, 0, 1);
+        margin-right: 10px;
         li {
             display: block;
         }
         .nav-menu > li > a {
             transition: $trans;
-            box-sizing: border-box;
             display: block;
             font-size: $font-size-menu;
             line-height: $line-height-base;
             padding: 10px 15px;
-            margin-right: 10px;
             margin-bottom: 10px;
             background: $container-bg;
             &:hover {

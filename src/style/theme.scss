@@ -10,8 +10,7 @@
   #{--module-hover-bg-darken-20}: darken($module-hover-bg, 20%);
 
   #{--text-color}: $text;
-  #{--text-reversal}: $white;
-  #{--text-light}: lighter($text, 20%); // #777
+  #{--text-light}: lighten($text, 20%); // #777
   #{--text-dark}: darken($text, 20%); // #333
   #{--text-darken}: darken($text, 40%); // #333
   #{--text-secondary}: rgba($black, .54);
@@ -74,8 +73,8 @@
     @include css-var($text: #fff,
     $white: #000,
     $black: #fff,
-    $primary: #fff,
-    $app-bg: #000,
+    $primary: #4056ff,
+    $app-bg: #3f3f3f,
     $module-hover-bg: rgba(0, 0, 0, 0.5));
   }
 }

@@ -190,4 +190,7 @@
     article img{
         max-width: 100%;
     }
+    /*p{*/
+        /*word-break: break-word;*/
+    /*}*/
 </style>

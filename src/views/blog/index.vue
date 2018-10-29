@@ -41,7 +41,7 @@
             transition: $trans;
             background: $container-bg;
             margin-left: 210px;
-            /*margin-right: 210px;*/
+            width: calc(100% - 420px);
             padding: $container-pd;
         }
     }
