@@ -25,11 +25,11 @@
         background: $app-bg; */
         .app-main-container {
             @include margin-auto-width();
-            background: $container-bg;
-            margin-top: 10px;
             padding: $container-pd;
             box-sizing: border-box;
-            box-shadow: $box-shadow;
+            //background: $container-bg;
+            /*margin-top: 10px;*/
+            //box-shadow: $box-shadow;
         }
     }
 </style>

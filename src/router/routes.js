@@ -2,8 +2,8 @@ import layout from '_c/layout'
 
 const routes = [
     {
-        path: "*",
-        redirect: "/"
+        path: '*',
+        redirect: '/'
     },
     {
         path: '/',
@@ -15,16 +15,17 @@ const routes = [
                 path: '/blog',
                 name: 'blog',
                 component: () => import('_v/blog'),
-                redirect: '/',
+                redirect: '/blog/recent',
                 children: [
                     {
-                        path: '/',
-                        name: 'Recent',
+                        path: 'recent',
+                        name: 'recent',
+                        // alias: '/blog',
                         component: () => import('_v/blog/recent')
                     },
                     {
-                        path: '/articles',
-                        name: 'articles',
+                        path: 'frontend',
+                        name: 'frontend',
                         component: () => import('_v/blog/Articles')
                     }
                 ]

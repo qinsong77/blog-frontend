@@ -187,5 +187,7 @@
 </script>
 
 <style lang="scss">
-
+    article img{
+        max-width: 100%;
+    }
 </style>

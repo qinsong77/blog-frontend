@@ -1,11 +1,28 @@
 $container-pd:10px;
 $box-shadow:0 2px 12px 0 rgba(0,0,0,.1);
-
+$trans: all .3s ease-in-out;
 // PC Theme Color
 $app-bg: var(--app-bg);
 $container-bg:var(--container-bg);
 $bg-opacity-m: var(--bg-opacity-m);
+$module-hover-bg:var(--module-hover-bg);
+$module-hover-bg-darken-20: var(--module-hover-bg-darken-20);
 $primary: var(--primary-color);
+
+
+// Typography
+$line-height-base: 1.4;
+$font-size-base: 14px;
+$font-size-menu:15px;
+$font-size-l: 16px;
+$font-size-xl:20px;
+$font-size-s: 12px;
+$font-size-h1: 2rem;
+$font-size-h2: 1.75rem;
+$font-size-h3: 1.5rem;
+$font-size-h4: 1.2rem;
+$font-size-h5: 1rem;
+$font-size-h6: $font-size-s;
 
 
 // Text
@@ -22,6 +39,7 @@ $text-reversal: var(--text-reversal);
 
 // Links
 $link-color: var(--link-color);
+$link-active-color:var(--link-active-color);
 $link-hover-color: var(--link-hover-color);
 
 // Colors
@@ -53,7 +71,7 @@ $sm-pad: 8px;
 $md-pad: 1.2em;
 $lg-pad: 1.5em;
 $xlg-pad: 3em;
-$trans: .3s;
+
 
 // Breakpoints
 $small-breakpoint: 400px;
@@ -65,17 +83,7 @@ $serif: Georgia, Times, 'Times New Roman', serif;
 $monospace: Menlo, Monaco, Consolas, 'Courier New', monospace;
 $font-family: $sans-serif;
 
-// Typography
-$font-size-base: 14px;
-$font-size-large: 1.2rem;
-$font-size-small: .85rem;
-$font-size-h1: 2rem;
-$font-size-h2: 1.75rem;
-$font-size-h3: 1.5rem;
-$font-size-h4: 1.2rem;
-$font-size-h5: 1rem;
-$font-size-h6: $font-size-small;
-$line-height-base: 1.4;
+
 
 $border: 1px solid $dividers;
 

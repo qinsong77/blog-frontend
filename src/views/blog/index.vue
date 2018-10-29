@@ -1,21 +1,28 @@
 <template>
     <div class="blog-container">
-        <blog-nav/>
+        <blog-nav :class="{'blog-nav-open':showNav}"/>
         <div class="blog-main-container">
             <router-view/>
         </div>
+        <blog-right-box/>
     </div>
 </template>
 
 <script>
-    import BlogNav from './blog-nav'
+    import { mapState } from 'vuex'
+    import BlogNav from './components/blog-nav'
+    import BlogRightBox from './components/blog-right-box'
     export default {
         name: 'index',
-        components: { BlogNav },
+        components: { BlogRightBox, BlogNav },
         data () {
             return {}
         },
-        computed: {},
+        computed: {
+            ...mapState({
+                showNav: state => state.app.showNav
+            })
+        },
 
         created () {
         },
@@ -29,9 +36,12 @@
 
 <style lang="scss">
     .blog-container{
-        background: $container-bg;
+        display: flex;
         >.blog-main-container{
+            transition: $trans;
+            background: $container-bg;
             margin-left: 210px;
+            /*margin-right: 210px;*/
             padding: $container-pd;
         }
     }

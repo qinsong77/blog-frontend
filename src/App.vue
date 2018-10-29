@@ -14,4 +14,7 @@
         text-rendering: optimizeLegibility;
         font-family: DINRegular, -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Hiragino Sans GB", "Segoe UI", "Microsoft YaHei", "微软雅黑", sans-serif;;
     }
+    .router-link-active{
+        color: $link-active-color;
+    }
 </style>
