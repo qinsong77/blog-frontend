@@ -4,10 +4,15 @@ $trans: all .3s ease-in-out;
 // PC Theme Color
 $app-bg: var(--app-bg);
 $container-bg:var(--container-bg);
-$bg-opacity-m: var(--bg-opacity-m);
+$secondary-bg:var(--secondary-bg);
+$secondary-bg-darken:var(--secondary-bg-darken);
+$secondary-bg-lighten:var(--secondary-bg-lighten);
 $module-hover-bg:var(--module-hover-bg);
 $module-hover-bg-darken-20: var(--module-hover-bg-darken-20);
+$bg-opacity-m: var(--bg-opacity-m);
 $primary: var(--primary-color);
+
+
 
 
 // Typography
@@ -30,20 +35,21 @@ $text: var(--text-color);
 $text-dark: var(--text-dark);
 $text-darken: var(--text-darken);
 $text-light: var(--text-light);
+$text-invert:var(--text-invert);
 $secondary: var(--text-secondary);
 $disabled: var(--text-disabled);
 $dividers: var(--text-dividers);
 
-$white: var(--text-reversal);
-$text-reversal: var(--text-reversal);
 
+$border: 1px solid $dividers;
 // Links
 $link-color: var(--link-color);
 $link-active-color:var(--link-active-color);
 $link-hover-color: var(--link-hover-color);
 
 // Colors
-$primary: #0088f5;
+$primary:$primary;
+$primary-color-secondary:var(--primary-color-secondary);
 $accent: #4caf50;
 $red: #ff5722;
 $yellow: #ffeb3b;
@@ -53,37 +59,7 @@ $black-light: #555;
 
 // Container
 $header-height: 56px;
-$container-width: 75em;
-$mobile-container-width: 100%;
-
-// Mobile
-$mobile-aside-bg: #34393d;
-$mobile-aisde-transition: all 0.35s ease-out;
-
-// Other
-$radius: 2px;
-$navbar-height: 4.5em;
-
-// Basic stylings
-$br: 4px;
-$xs-pad: 4px;
-$sm-pad: 8px;
-$md-pad: 1.2em;
-$lg-pad: 1.5em;
-$xlg-pad: 3em;
-
-
-// Breakpoints
-$small-breakpoint: 400px;
-$large-breakpoint: $container-width;
-
-// Font
-$sans-serif: DINRegular, -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Hiragino Sans GB", "Segoe UI", "Microsoft YaHei", "微软雅黑", sans-serif;
-$serif: Georgia, Times, 'Times New Roman', serif;
-$monospace: Menlo, Monaco, Consolas, 'Courier New', monospace;
-$font-family: $sans-serif;
 
 
 
-$border: 1px solid $dividers;
 

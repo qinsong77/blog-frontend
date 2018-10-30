@@ -30,10 +30,12 @@
     width: auto!important;
   }
   .blog-nav{
-    transform: translate(0, 0);
+    transform: translate(-210px, 0);
+
   }
   .blog-nav-open{
-    transform: translate(-210px, 0);
+    transform: translate(-10px, 0);
+    box-shadow: $box-shadow;
   }
   .header-menu a>span{
     display: none;

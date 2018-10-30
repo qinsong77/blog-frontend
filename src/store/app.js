@@ -1,6 +1,6 @@
 const app = {
     state: {
-        showNav: true,
+        showNav: false,
         theme: 'theme-default'
     },
     mutations: {

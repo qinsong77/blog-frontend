@@ -6,7 +6,7 @@
             </div>
             <div class="header-menu">
                 <ul>
-                    <li class="nav-bar-menu" @click="setShowNav" >
+                    <li class="nav-bar-menu" @click="setShowNav" v-show="showNavByRoute">
                         <a>
                             <i class="iconfont icon-menu"></i>
                         </a>
@@ -35,6 +35,7 @@
                             <span>Me</span>
                         </router-link>
                     </li>
+                    <!--<div class="tabs-ink-bar"></div>-->
                 </ul>
             </div>
         </nav>
@@ -45,7 +46,18 @@
     export default {
         name: 'index',
         data () {
-            return {}
+            return {
+                showNavByRoute: true
+            }
+        },
+        watch: {
+            '$route' (to, from) {
+                if (to.path.indexOf('/blog') !== -1) {
+                    this.showNavByRoute = true
+                } else {
+                    this.showNavByRoute = false
+                }
+            }
         },
         methods: {
             setShowNav () {
@@ -77,6 +89,9 @@
                     line-height: 1.4;
                     font-size: $font-size-h1;
                     color: $primary;
+                    &:hover{
+                        background: transparent;
+                    }
                 }
             }
             > .header-menu {
@@ -84,16 +99,27 @@
                     display: none;
                 }
                 ul {
+                    position: relative;
                     display: flex;
                     i{
                         font-size: 23px;
                     }
+                    .router-link-active{
+                        //border-bottom: 2px solid $primary;
+                    }
                     a {
+                        transition: all 0.3s ease-in-out;
+                        display: inline-block;
                         font-size: $font-size-menu;
                         line-height: $line-height-base;
-                        padding: 0 15px;
+                        padding: 12px 15px;
                         text-decoration: none;
                         cursor: pointer;
+                        &:hover{
+                            color: #0088f5;
+                            background: transparent;
+                            //border-bottom: 2px solid $primary;
+                        }
                         >span{
                             margin-left: 5px;
                         }
@@ -101,6 +127,16 @@
                 }
             }
         }
-
+        /*.tabs-ink-bar {*/
+            /*width: 100%;*/
+            /*z-index: 1;*/
+            /*position: absolute;*/
+            /*left: 0;*/
+            /*bottom: 1px;*/
+            /*box-sizing: border-box;*/
+            /*height: 2px;*/
+            /*background-color: rgb(24, 144, 255);*/
+            /*transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, width 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;*/
+        /*}*/
     }
 </style>

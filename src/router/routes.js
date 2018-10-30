@@ -29,6 +29,21 @@ const routes = [
                         component: () => import('_v/blog/Articles')
                     }
                 ]
+            },
+            {
+                path: '/demos',
+                name: 'demos',
+                component: () => import('_v/demos')
+            },
+            {
+                path: '/archive',
+                name: 'archive',
+                component: () => import('_v/archive')
+            },
+            {
+                path: '/me',
+                name: 'me',
+                component: () => import('_v/me')
             }
         ]
     }

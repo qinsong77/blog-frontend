@@ -1,20 +1,24 @@
 <template>
     <div class="blog-right-box">
-        <div>
-            <label>theme：</label>
-            <input type="radio" v-bind:checked="checked" v-on:change="setT"/>
-            <!--<switch-btn v-model="theme"/>-->
+        <div class="setting-container">
+            <i class="iconfont icon-setting"></i>
+            <!--<span class="setting-label">theme：</span>-->
+            <switch-btn v-model="checked" style="margin-left: 7px">
+                <span slot="left">dark</span>
+                <span slot="right">light</span>
+            </switch-btn>
         </div>
+        <tag-list/>
     </div>
 </template>
 
 <script>
-    import SwitchBtn from '_c/switch-btn'
     import { mapState, mapMutations } from 'vuex'
-
+    import SwitchBtn from '_c/switchbtn'
+    import TagList from './tag-list'
     export default {
         name: 'blog-right-box',
-        components: { SwitchBtn },
+        components: { TagList, SwitchBtn },
         data () {
             return {
                 checked: false
@@ -25,14 +29,17 @@
                 theme: state => state.theme
             })
         },
-
-        methods: {
-            ...mapMutations,
-            setT (e) {
-                if (e.target.checked) {
+        watch: {
+            checked (oldval, newVal) {
+                if (newVal) {
+                    this.$store.commit('setTheme', 'theme-default')
+                } else {
                     this.$store.commit('setTheme', 'theme-dark')
                 }
             }
+        },
+        methods: {
+            ...mapMutations
         }
     }
 </script>
@@ -44,6 +51,14 @@
         margin-left: 10px;
         > div {
             background: $container-bg;
+        }
+        .setting-container{
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            >.setting-label{
+                margin-left: 5px;
+            }
         }
     }
 </style>

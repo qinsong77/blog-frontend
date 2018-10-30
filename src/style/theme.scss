@@ -1,80 +1,54 @@
-@mixin css-var($text, $white, $black, $primary, $app-bg, $module-hover-bg) {
+@mixin css-var($text, $app-bg,$container-bg, $secondary-bg,$module-hover-bg,$primary) {
+
+  #{--color}: $text;
 
   #{--app-bg}: $app-bg;
-  #{--container-bg}: $white;
-  #{--primary-color}: $primary;
-
-  #{--bg-opacity-m}: rgba($white, 0.6);
-
-  #{--module-hover-bg}: $module-hover-bg;
+  #{--container-bg}: $container-bg;
+  #{--secondary-bg}: $secondary-bg;
+  #{--secondary-bg-darken}: darken($secondary-bg, 30%);
+  #{--secondary-bg-lighten}: lighten($secondary-bg, 15%);
+  #{--module-hover-bg}:$module-hover-bg;
   #{--module-hover-bg-darken-20}: darken($module-hover-bg, 20%);
+  #{--bg-opacity-m}: rgba($container-bg, 0.6);
+
+  #{--primary-color}: $primary;
+  #{--primary-color-secondary}: lighten($primary,20%);
 
   #{--text-color}: $text;
-  #{--text-light}: lighten($text, 20%); // #777
-  #{--text-dark}: darken($text, 20%); // #333
-  #{--text-darken}: darken($text, 40%); // #333
-  #{--text-secondary}: rgba($black, .54);
-  #{--text-disabled}: rgba($black, .38);
-  #{--text-dividers}: rgba($black, .26);
+  #{--text-light}: lighten($text, 20%);
+  #{--text-dark}: darken($text, 20%);
+  #{--text-darken}: darken($text, 40%);
+  #{--text-secondary}: rgba($text, .54);
+  #{--text-disabled}: rgba($text, .38);
+  #{--text-dividers}: rgba($text, .26);
+  #{--text-invert}:invert($text);
 
   #{--link-color}: $text;
-  #{--link-active-color}:$primary;
-  #{--link-hover-color}: darken($text, 20%);
+  #{--link-active-color}: $primary;
+  #{--link-hover-color}: invert($container-bg, 20%);
 }
 
 #app {
 
   &.theme-default {
-    @include css-var($text: #555,
-    $white: #fff,
-    $black: #000,
-    $primary: #0088f5,
-    $app-bg: #f8f8f8,
-    $module-hover-bg: rgba(197, 197, 197, 0.5));
-  }
-
-  &.theme-beige {
-    @include css-var($text: #555,
-    $white: #bfbf9b,
-    $black: #000,
-    $primary: #000,
-    $app-bg: #bfbf9b,
-    $module-hover-bg: rgba(197, 197, 197, 0.5));
-  }
-
-  &.theme-gay {
-    @include css-var($text: #555,
-    $white: #fff,
-    $black: #000,
-    $primary: purple,
-    $app-bg: purple,
-    $module-hover-bg: rgba(197, 197, 197, 0.5));
-  }
-
-  &.theme-wang {
-    @include css-var($text: #555,
-    $white: #fff,
-    $black: #000,
-    $primary: green,
-    $app-bg: green,
-    $module-hover-bg: rgba(197, 197, 197, 0.5));
-  }
-
-  &.theme-red {
-    @include css-var($text: #555,
-    $white: #fff,
-    $black: #000,
-    $primary: red,
-    $app-bg: red,
-    $module-hover-bg: rgba(197, 197, 197, 0.5));
+    @include css-var(
+            $text: #666,
+            $app-bg: #f8f8f8,
+            $container-bg: #fff,
+            $secondary-bg: rgba(197, 197, 197, 0.5),
+            $module-hover-bg: rgba(148, 210, 173, 0.7),
+            $primary: #007bff
+    );
   }
 
   &.theme-dark {
-    @include css-var($text: #fff,
-    $white: #000,
-    $black: #fff,
-    $primary: #4056ff,
-    $app-bg: #3f3f3f,
-    $module-hover-bg: rgba(0, 0, 0, 0.5));
+    @include css-var(
+            $text: #eee,
+            $app-bg: #3c3f41,
+            $container-bg: #293134,
+            $secondary-bg: rgba(90, 130, 130, 0.6),
+            $module-hover-bg: rgba(30, 30, 30, 0.7),
+            $primary: #ff718e
+    );
   }
 }

@@ -42,6 +42,7 @@
             background: $container-bg;
             margin-left: 210px;
             width: calc(100% - 420px);
+            min-height: 80vh;
             padding: $container-pd;
         }
     }

@@ -1,14 +1,16 @@
 <template>
     <div>
-        <p style="word-break: break-word">
-            recent1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
-        </p>
+        <blog-top-slider/>
+        <blog-article-link-card/>
     </div>
 </template>
 
 <script>
+    import BlogTopSlider from './components/blog-top-slider'
+    import BlogArticleLinkCard from './components/blog-article-link-card'
     export default {
         name: 'recent',
+        components: { BlogArticleLinkCard, BlogTopSlider },
         data () {
             return {}
         },
