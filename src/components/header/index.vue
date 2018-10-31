@@ -104,21 +104,48 @@
                     i{
                         font-size: 23px;
                     }
-                    .router-link-active{
-                        //border-bottom: 2px solid $primary;
+                    .router-link-active:before{
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        border-bottom: 2px solid $primary;
+                        transition: 0.2s all linear;
+                    }
+                    li{
+                        height: 100%;
                     }
                     a {
+                        position: relative;
                         transition: all 0.3s ease-in-out;
-                        display: inline-block;
+                        display: block;
                         font-size: $font-size-menu;
-                        line-height: $line-height-base;
-                        padding: 12px 15px;
+                        height: 56px;
+                        padding: 0 15px;
                         text-decoration: none;
                         cursor: pointer;
+                        &:before {
+                            content: "";
+                            position: absolute;
+                            top: 0;
+                            left: 100%;
+                            width: 0;
+                            height: 100%;
+                            border-bottom: 2px solid $primary;
+                            transition: 0.2s all linear;
+                        }
                         &:hover{
-                            color: #0088f5;
-                            background: transparent;
-                            //border-bottom: 2px solid $primary;
+                            color: $primary;
+                            background: $secondary-bg-lighten;
+                            &:before{
+                                width: 100%;
+                                left: 0;
+                            }
+                            &:hover ~ &::before {
+                                left: 0;
+                            }
                         }
                         >span{
                             margin-left: 5px;

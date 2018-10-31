@@ -39,10 +39,9 @@
         display: flex;
         >.blog-main-container{
             transition: $trans;
-            background: $container-bg;
             margin-left: 210px;
             width: calc(100% - 420px);
-            min-height: 80vh;
+            min-height: calc(100vh - 200px);
             padding: $container-pd;
         }
     }

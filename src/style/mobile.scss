@@ -28,6 +28,7 @@
   .blog-container > .blog-main-container{
     margin-left: 0!important;
     width: auto!important;
+    padding: 0!important;
   }
   .blog-nav{
     transform: translate(-210px, 0);
@@ -41,6 +42,9 @@
     display: none;
   }
   .blog-right-box{
+    display: none;
+  }
+  .article-link-card>img{
     display: none;
   }
 }
