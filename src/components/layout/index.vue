@@ -20,10 +20,22 @@
 
 <style lang="scss">
     .app-container {
+        /**{*/
+            /*z-index: 1;*/
+        /*}*/
+        position: relative;
+        >div,>main{
+            z-index:1;
+        }
         padding-top: 56px;
-        /*height: 100%;
-        background: $app-bg; */
+        height: 100vh;
+        background: $app-bg;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
         .app-main-container {
+            flex-shrink: 0;
+            width: 100%;
             @include margin-auto-width();
             padding: $container-pd;
             box-sizing: border-box;

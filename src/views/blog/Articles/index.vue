@@ -54,7 +54,7 @@
 
 <style lang="scss">
     article img{
-        max-width: 100%;
+        /*max-width: 100%;*/
     }
     /*p{*/
         /*word-break: break-word;*/

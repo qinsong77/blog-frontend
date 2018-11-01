@@ -45,6 +45,7 @@
 
 <style lang="scss">
     .blog-nav {
+        z-index: 99;
         top: 66px;
         position: fixed;
         width: 200px;

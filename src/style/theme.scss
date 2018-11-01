@@ -6,7 +6,7 @@
   #{--container-bg}: $container-bg;
   #{--secondary-bg}: $secondary-bg;
   #{--secondary-bg-darken}: darken($secondary-bg, 30%);
-  #{--secondary-bg-lighten}: lighten($secondary-bg, 15%);
+  #{--secondary-bg-lighten}: lighten($secondary-bg, 20%);
   #{--module-hover-bg}:$module-hover-bg;
   #{--module-hover-bg-darken-20}: darken($module-hover-bg, 20%);
   #{--bg-opacity-m}: rgba($container-bg, 0.6);
@@ -32,7 +32,7 @@
 
   &.theme-default {
     @include css-var(
-            $text: #666,
+            $text: #000,
             $app-bg: #f8f8f8,
             $container-bg: #fff,
             $secondary-bg: rgba(197, 197, 197, 0.5),

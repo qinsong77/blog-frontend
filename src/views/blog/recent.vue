@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="recent">
         <blog-top-slider/>
         <blog-article-link-card/>
     </div>
@@ -27,5 +27,7 @@
 </script>
 
 <style lang="scss">
-
+    .recent{
+        width: 100%;
+    }
 </style>
