@@ -8,10 +8,10 @@ function resolve (dir) {
 // 基础路径 注意发布之前要先修改这里
 let baseUrl = '/'
 // 演示项目自动构建使用
-if (process.env.VUE_APP_TRAVIS === 'TRUE') baseUrl = '/d2-admin/'
 
 module.exports = {
-    baseUrl: baseUrl, // 根据你的实际情况更改这里
+    baseUrl: baseUrl,
+    outputDir: 'docs',
     lintOnSave: true,
     productionSourceMap: true,
     devServer: {

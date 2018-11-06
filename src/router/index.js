@@ -10,7 +10,7 @@ import { getToken } from '../common/auth'
 Vue.use(Router)
 
 const router = new Router({
-    mode: 'hash',
+    mode: 'history',
     // linkActiveClass: 'active',
     base: process.env.BASE_URL,
     scrollBehavior: () => ({ y: 0 }),
