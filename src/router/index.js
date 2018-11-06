@@ -12,7 +12,7 @@ Vue.use(Router)
 const router = new Router({
     mode: 'history',
     // linkActiveClass: 'active',
-    base: process.env.BASE_URL,
+    // base: process.env.BASE_URL,
     scrollBehavior: () => ({ y: 0 }),
     routes: routes
 })
