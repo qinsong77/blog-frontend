@@ -74,7 +74,7 @@ export default {
     "events": {
       "onhover": {
         "enable": true,
-        "mode": "repulse"
+        "mode": "bubble"
       },
       "onclick": {
         "enable": false,
@@ -90,8 +90,8 @@ export default {
         }
       },
       "bubble": {
-        "distance": 400,
-        "size": 40,
+        "distance": 200,
+        "size": 15,
         "duration": 2,
         "opacity": 8,
         "speed": 3
