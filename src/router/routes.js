@@ -1,10 +1,10 @@
 import layout from '_c/layout'
 
 const routes = [
-    {
-        path: '*',
-        redirect: '/'
-    },
+    // {
+    //     path: '*',
+    //     redirect: '/'
+    // },
     {
         path: '/',
         name: 'main',
