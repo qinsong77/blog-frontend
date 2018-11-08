@@ -6,8 +6,8 @@
             </router-link>
             <!--<span class="setting-label">theme：</span>-->
             <switch-btn v-model="checked" style="margin-left: 7px">
-                <span slot="left">dark</span>
-                <span slot="right">light</span>
+                <span slot="left">light</span>
+                <span slot="right">dark</span>
             </switch-btn>
         </div>
         <tag-list/>
@@ -15,7 +15,7 @@
 </template>
 
 <script>
-    import { mapState, mapMutations } from 'vuex'
+    import { mapGetters, mapMutations } from 'vuex'
     import SwitchBtn from '_c/switchbtn'
     import TagList from './tag-list'
     export default {
@@ -23,25 +23,29 @@
         components: { TagList, SwitchBtn },
         data () {
             return {
-                checked: false
             }
         },
         computed: {
-            ...mapState({
-                theme: state => state.theme
-            })
-        },
-        watch: {
-            checked (oldval, newVal) {
-                if (newVal) {
-                    this.$store.commit('setTheme', 'theme-default')
-                } else {
-                    this.$store.commit('setTheme', 'theme-dark')
+            ...mapGetters([
+                'checkTheme'
+            ]),
+            'checked': {
+                get () {
+                    return this.checkTheme
+                },
+                set (value) {
+                    if (value) {
+                        this.setTheme('theme-default')
+                    } else {
+                        this.setTheme('theme-dark')
+                    }
                 }
             }
         },
         methods: {
-            ...mapMutations
+            ...mapMutations([
+                'setTheme'
+            ])
         }
     }
 </script>

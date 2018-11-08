@@ -1,10 +1,10 @@
 import layout from '_c/layout'
 
 const routes = [
-    // {
-    //     path: '*',
-    //     redirect: '/'
-    // },
+    {
+        path: '*',
+        redirect: '/'
+    },
     {
         path: '/',
         name: 'main',
@@ -27,6 +27,21 @@ const routes = [
                         path: 'frontend',
                         name: 'frontend',
                         component: () => import('_v/blog/Articles')
+                    },
+                    {
+                        path: 'mobile',
+                        name: 'mobile',
+                        component: () => import('_v/blog/mobile')
+                    },
+                    {
+                        path: 'background',
+                        name: 'background',
+                        component: () => import('_v/blog/background')
+                    },
+                    {
+                        path: 'notebook',
+                        name: 'notebook',
+                        component: () => import('_v/blog/notebook')
                     }
                 ]
             },

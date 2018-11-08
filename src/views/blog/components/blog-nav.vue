@@ -15,7 +15,7 @@
                 </router-link>
             </li>
             <li>
-                <router-link to="/blog/notebooks"><i class="iconfont icon-bg-colors"></i><span>心情日记</span>
+                <router-link to="/blog/notebook"><i class="iconfont icon-bg-colors"></i><span>心情日记</span>
                 </router-link>
             </li>
         </ul>
