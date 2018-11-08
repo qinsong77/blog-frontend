@@ -44,6 +44,11 @@ const routes = [
                 path: '/me',
                 name: 'me',
                 component: () => import('_v/me')
+            },
+            {
+                path: '/setting',
+                name: 'setting',
+                component: () => import('_v/setting')
             }
         ]
     }
