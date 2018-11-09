@@ -1,7 +1,7 @@
 const app = {
     state: {
         showNav: false,
-        theme: 'theme-default'
+        theme: localStorage.getItem('theme') ? localStorage.getItem('theme') : 'theme-default'
     },
     getters: {
         checkTheme: state => {
@@ -13,6 +13,7 @@ const app = {
             state.showNav = !state.showNav
         },
         setTheme (state, value) {
+            localStorage.setItem('theme', value)
             state.theme = value
         }
     }

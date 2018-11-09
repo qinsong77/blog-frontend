@@ -45,7 +45,7 @@
             margin-left: 210px;
             width: calc(100% - 420px);
             /*min-height: calc(100vh - 200px);*/
-            padding: $container-pd;
+            //padding: $container-pd;
             transform: translateX(0);
         }
         > .translateX {

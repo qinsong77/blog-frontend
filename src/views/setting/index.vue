@@ -1,6 +1,6 @@
 <template>
     <div class="setting">
-        <switch-btn v-model="checked" style="margin-left: 7px;float: right">
+        <switch-btn v-model="checked" style="margin:15px;float: right;">
             <span slot="left">light</span>
             <span slot="right">dark</span>
         </switch-btn>
@@ -87,16 +87,18 @@
                 </tbody>
             </table>
         </div>
-    </div>
 
+        <icon-list/>
+    </div>
 </template>
 
 <script>
     import SwitchBtn from '_c/switchbtn'
     import { mapGetters, mapMutations } from 'vuex'
+    import IconList from './icon-list'
     export default {
         name: 'index',
-        components: { SwitchBtn },
+        components: { IconList, SwitchBtn },
         data () {
             return {
                 color: ''

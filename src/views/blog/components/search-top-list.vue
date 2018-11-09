@@ -1,14 +1,8 @@
 <template>
     <div class="search-top-list">
-        <div class="input-container">
-            <input v-model="search" required placeholder="search me"/>
-            <button class="search-btn">
-                <i class="iconfont icon-search"></i>
-            </button>
-        </div>
         <div class="top-list-container">
             <div class="title">
-                <i class="iconfont icon-vertical-align-top"></i>
+                <icon icon="#icon-upload"/>
                 TOP LIST
             </div>
             <ul class="top-list">
@@ -26,7 +20,6 @@
         name: 'search-top-list',
         data () {
             return {
-                search: '',
                 items: {
                     'dsjfkas': '发贺卡1',
                     'dsj1fkas': '发贺卡2',
@@ -42,35 +35,6 @@
     .search-top-list {
         > div {
             background: $container-bg;
-        }
-        .input-container {
-            padding: 5px 10px;
-            display: flex;
-            > input {
-                color: $text;
-                width: 100%;
-                height: 30px;
-                background: $secondary-bg;
-                border: none;
-                padding: 3px 7px;
-                outline: 0;
-                transition: $trans;
-                &:focus {
-                    background: $secondary-bg-darken;
-                }
-                &:focus:invalid {
-                    border-color: #ee3900;
-                    color: #ff5722;
-                }
-            }
-            .search-btn {
-                color: $text;
-                background-color: $secondary-bg-darken;
-                border: none;
-                outline: 0;
-                padding: 3px 7px;
-                cursor: pointer;
-            }
         }
         .top-list-container {
             margin-top: 15px;

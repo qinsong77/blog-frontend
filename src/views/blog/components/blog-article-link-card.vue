@@ -7,10 +7,10 @@
                 <p class="sub-title">这是一个文章简单简绍</p>
             </div>
             <div class="info-list">
-                <span class="time"><i class="iconfont icon-time-circle"></i>2018.12.10</span>
-                <span class="red-mounts"><i class="iconfont icon-eye"></i>12</span>
-                <span class="comment"><i class="iconfont icon-message"></i>31</span>
-                <span class="tags"><i class="iconfont icon-tag"></i>Vue.js</span>
+                <span class="time"><icon icon="#icon-time"/>2018.12.10</span>
+                <span class="red-mounts"><icon icon="#icon-icon-test"/>12</span>
+                <span class="comment"><icon icon="#icon-comments"/>31</span>
+                <span class="tags"><icon icon="#icon-tag"/>Vue.js</span>
             </div>
         </div>
     </div>
@@ -66,10 +66,8 @@
                 justify-content: space-between;
                 >span{
                     margin-right: 5px;
-                    >i{
+                    >svg{
                         margin-right: 5px;
-                        font-size: $font-size-l;
-                        vertical-align: -.08em;
                     }
                 }
             }

@@ -2,7 +2,7 @@
     <div class="blog-right-box">
         <div class="setting-container">
             <router-link to="/setting">
-                设置<i class="iconfont icon-setting"></i>
+                设置 <icon icon="#icon-settings__one"/>
             </router-link>
             <!--<span class="setting-label">theme：</span>-->
             <switch-btn v-model="checked" style="margin-left: 7px">
