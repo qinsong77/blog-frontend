@@ -1,7 +1,7 @@
 <template>
     <div class="blog-container">
         <blog-nav :class="{'blog-nav-open':showNav}"/>
-        <div class="blog-main-container" :class="{'translateX':showNav}">
+        <div class="blog-main-container">
             <transition name="slide-up" mode="out-in">
                 <router-view/>
             </transition>
@@ -30,9 +30,6 @@
         created () {
         },
 
-        mounted () {
-        },
-
         methods: {}
     }
 </script>
@@ -44,13 +41,13 @@
             transition: $trans;
             margin-left: 210px;
             width: calc(100% - 420px);
-            /*min-height: calc(100vh - 200px);*/
+            //min-height: calc(100vh - 200px);
             //padding: $container-pd;
             transform: translateX(0);
         }
-        > .translateX {
-            position: fixed;
-            transform: translateX(210px);
-        }
+        /*> .translateX {*/
+            /*position: fixed;*/
+            /*transform: translateX(210px);*/
+        /*}*/
     }
 </style>

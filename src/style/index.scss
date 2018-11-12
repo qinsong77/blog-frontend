@@ -42,8 +42,8 @@ html, body {
   opacity: 0.3;
 }
 .slide-up-enter-active {  //定义进入过渡生效时的状态。在整个进入过渡的阶段中应用，在元素被插入之前生效，在过渡/动画完成之后移除。这个类可以被用来定义进入过渡的过程时间，延迟和曲线函数。
-  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-  transition-delay: 0.2ms;
+  transition: all .2s ease-in-out;
+  transition-delay: 0.1ms;
 }
 .slide-up-enter-to{ // 2.1.8版及以上 定义进入过渡的结束状态。在元素被插入之后下一帧生效 (与此同时 v-enter 被移除)，在过渡/动画完成之后移除。
   transform: translate3d(0,0,0);
@@ -55,12 +55,12 @@ html, body {
   opacity: 1;
 }
 .slide-up-leave-active { //定义离开过渡生效时的状态。在整个离开过渡的阶段中应用，在离开过渡被触发时立刻生效，在过渡/动画完成之后移除。这个类可以被用来定义离开过渡的过程时间，延迟和曲线函数。
-  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  transition: all .2s ease-in-out;
 }
 
 .slide-up-leave-to { //定义离开过渡的结束状态。在离开过渡被触发之后下一帧生效 (与此同时 v-leave 被删除)，在过渡/动画完成之后移除。
   transform: translate3d(0,-150px,0);
-  opacity: 0;
+  opacity: 0.3;
 }
 
 .slide-left-enter-active, .slide-left-leave-active {

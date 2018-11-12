@@ -52,7 +52,8 @@
 
 <style lang="scss">
     .blog-right-box {
-        width: 200px;
+        //width: 200px; 对于flex这行不管用
+        flex:0 0 200px;
         height: 100%;
         margin-left: 10px;
         > div {

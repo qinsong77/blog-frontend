@@ -59,6 +59,37 @@
         },
 
         mounted () {
+            let that = this
+            let menuButton = document.querySelector('.nav-bar-menu')
+            let sidebar = document.querySelector('.blog-nav')
+            // menuButton.addEventListener('click', function (e) {
+            //     that.$store.commit('setShowNav')
+            // })
+            document.body.addEventListener('click', function (e) {
+                if (!sidebar.contains(e.target)) { // 侧边栏外的区域点击隐藏侧边栏 e.target !== menuButton && 去除,menuButton 添加了@click.stop 阻止单击事件继续传播
+                    that.$store.commit('closeNav')
+                }
+            })
+            // Toggle sidebar on swipe
+            let start = {}, end = {}
+
+            document.body.addEventListener('touchstart', function (e) {
+                start.x = e.changedTouches[0].clientX
+                start.y = e.changedTouches[0].clientY
+            })
+
+            document.body.addEventListener('touchend', function (e) {
+                end.y = e.changedTouches[0].clientY
+                end.x = e.changedTouches[0].clientX
+
+                let xDiff = end.x - start.x
+                let yDiff = end.y - start.y
+
+                if (Math.abs(xDiff) > Math.abs(yDiff)) {
+                    if (xDiff > 0 && start.x <= 80) that.$store.commit('showNav')
+                    else that.$store.commit('closeNav')
+                }
+            })
         },
 
         methods: {}
@@ -102,7 +133,7 @@
             > input {
                 color: $text;
                 width: 100%;
-                height: 30px;
+                height: 35px;
                 background: $secondary-bg;
                 border: none;
                 padding: 3px 7px;

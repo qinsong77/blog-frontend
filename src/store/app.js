@@ -12,6 +12,12 @@ const app = {
         setShowNav (state) {
             state.showNav = !state.showNav
         },
+        closeNav (state) {
+            state.showNav = false
+        },
+        showNav (state) {
+            state.showNav = true
+        },
         setTheme (state, value) {
             localStorage.setItem('theme', value)
             state.theme = value

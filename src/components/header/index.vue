@@ -6,10 +6,11 @@
             </div>
             <div class="header-menu">
                 <ul>
-                    <li class="nav-bar-menu" @click="setShowNav" v-show="showNavByRoute">
-                        <a>
+                    <!-- 阻止单击事件继续传播 -->
+                    <li class="nav-bar-menu" @click.stop="setShowNav" v-show="showNavByRoute">
+                        <span>
                             <icon icon="#icon-menu"/>
-                        </a>
+                        </span>
                     </li>
                     <li>
                         <router-link to="/blog" title="博客">
@@ -59,6 +60,9 @@
                 }
             }
         },
+        mounted () {
+
+        },
         methods: {
             setShowNav () {
                 this.$store.commit('setShowNav')
@@ -96,6 +100,7 @@
             }
             > .header-menu {
                 .nav-bar-menu{
+                    padding: 0 15px;
                     display: none;
                 }
                 ul {

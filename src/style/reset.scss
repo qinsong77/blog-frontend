@@ -12,6 +12,7 @@ table { border-collapse:collapse; }
 *::before,
 *::after {
   box-sizing: border-box;
+  transition: all .5s ease-in-out;
 }
 
 .clearfix:before,
