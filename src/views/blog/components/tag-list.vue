@@ -1,14 +1,10 @@
 <template>
     <div class="tags-container">
         <ul>
-            <li class="tag-li">
-                <a><i class="iconfont icon-chrome"></i>Chrome</a>
-            </li>
-            <li class="tag-li">
-                <a><i class="iconfont icon-code"></i>Code</a>
-            </li>
-            <li class="tag-li">
-                <a><i class="iconfont icon-star"></i>Star</a>
+            <li class="tag-li" v-for="tag in tags" :key="tag.id">
+                <a>
+                    {{tag.name}}
+                </a>
             </li>
         </ul>
     </div>
@@ -18,11 +14,18 @@
     export default {
         name: 'tag-list',
         data () {
-            return {}
+            return {
+                tags: []
+            }
         },
         computed: {},
 
         created () {
+            this.$Axios.get('/tag/all').then(res => {
+                if (res.result) {
+                    this.tags = res.content
+                }
+            })
         },
 
         mounted () {

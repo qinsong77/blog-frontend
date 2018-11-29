@@ -1,7 +1,9 @@
 <template>
     <div class="recent">
         <blog-top-slider/>
-        <blog-article-link-card/>
+        <template v-for="(item,index) in articles">
+            <blog-article-link-card :data="item" :key="index"/>
+        </template>
     </div>
 </template>
 
@@ -12,11 +14,18 @@
         name: 'recent',
         components: { BlogArticleLinkCard, BlogTopSlider },
         data () {
-            return {}
+            return {
+                articles: []
+            }
         },
         computed: {},
 
         created () {
+            this.$Axios.get('/article/page/1').then(res => {
+                if (res.result) {
+                    this.articles = res.content.data
+                }
+            })
         },
 
         mounted () {

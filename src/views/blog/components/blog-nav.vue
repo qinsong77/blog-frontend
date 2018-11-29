@@ -60,6 +60,7 @@
 
         mounted () {
             let that = this
+            // eslint-disable-next-line
             let menuButton = document.querySelector('.nav-bar-menu')
             let sidebar = document.querySelector('.blog-nav')
             // menuButton.addEventListener('click', function (e) {
@@ -71,7 +72,8 @@
                 }
             })
             // Toggle sidebar on swipe
-            let start = {}, end = {}
+            let start = {}
+            let end = {}
 
             document.body.addEventListener('touchstart', function (e) {
                 start.x = e.changedTouches[0].clientX

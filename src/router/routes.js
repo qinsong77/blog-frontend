@@ -26,7 +26,7 @@ const routes = [
                     {
                         path: 'frontend',
                         name: 'frontend',
-                        component: () => import('_v/blog/Articles')
+                        component: () => import('_v/blog/articles')
                     },
                     {
                         path: 'mobile',
@@ -42,6 +42,11 @@ const routes = [
                         path: 'notebook',
                         name: 'notebook',
                         component: () => import('_v/blog/notebook')
+                    },
+                    {
+                        path: 'article/:id',
+                        name: 'article',
+                        component: () => import('_v/blog/articles/detail')
                     }
                 ]
             },

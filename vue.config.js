@@ -13,9 +13,13 @@ module.exports = {
     outputDir: 'docs',
     lintOnSave: true,
     productionSourceMap: true,
-    // devServer: {
-    //     publicPath: baseUrl // 和 baseUrl 保持一致
-    // },
+    devServer: {
+        proxy: {
+            '/api': {
+                target: 'http://localhost:3000'
+            }
+        }
+    },
     // 默认设置: https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-service/lib/config/base.js
     chainWebpack: config => {
         // 解决 cli3 热更新失效 https://github.com/vuejs/vue-cli/issues/1559

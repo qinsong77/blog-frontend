@@ -3,14 +3,16 @@
         <img src="../../../assets/1212.png">
         <div class="card-info">
             <div>
-                <p class="title"><a>这是一个文章标题</a></p>
-                <p class="sub-title">这是一个文章简单简绍</p>
+                <p class="title"><a>{{data.title}}</a></p>
+                <p class="sub-title">{{data.desc}}</p>
             </div>
             <div class="info-list">
-                <span class="time"><icon icon="#icon-time"/>2018.12.10</span>
-                <span class="red-mounts"><icon icon="#icon-icon-test"/>12</span>
+                <span class="time"><icon icon="#icon-time"/>{{data.createdAt}}</span>
+                <span class="red-mounts"><icon icon="#icon-icon-test"/>{{data.viewCount}}</span>
                 <span class="comment"><icon icon="#icon-comments"/>31</span>
-                <span class="tags"><icon icon="#icon-tag"/>Vue.js</span>
+                <span class="tags"><icon icon="#icon-tag"/>
+                    <span v-for="item in data.tags" :key="item.id">{{item.name}}&nbsp;</span>
+                </span>
             </div>
         </div>
     </div>
@@ -18,7 +20,12 @@
 
 <script>
     export default {
-        name: 'blog-article-link-card'
+        name: 'blog-article-link-card',
+        props: {
+            data: {
+                type: Object
+            }
+        }
     }
 </script>
 
@@ -66,8 +73,14 @@
                 justify-content: space-between;
                 >span{
                     margin-right: 5px;
+                    /*flex: 1;*/
                     >svg{
                         margin-right: 5px;
+                    }
+                }
+                .tags{
+                    >span{
+                        /*margin-right: 5px;*/
                     }
                 }
             }
