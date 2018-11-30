@@ -1,9 +1,9 @@
 <template>
     <div class="article-link-card">
-        <img src="../../../assets/1212.png">
+        <img src="../../../assets/1212.png" @click="toDetail">
         <div class="card-info">
             <div>
-                <p class="title"><a>{{data.title}}</a></p>
+                <p class="title" @click="toDetail"><a>{{data.title}}</a></p>
                 <p class="sub-title">{{data.desc}}</p>
             </div>
             <div class="info-list">
@@ -24,6 +24,18 @@
         props: {
             data: {
                 type: Object
+            }
+        },
+        methods: {
+            toDetail () {
+                if (this.data.id) {
+                    this.$router.push({
+                        name: 'article',
+                        params: {
+                            id: this.data.id
+                        }
+                    })
+                }
             }
         }
     }

@@ -7,10 +7,11 @@ function resolve (dir) {
 
 // 基础路径 注意发布之前要先修改这里
 // 演示项目自动构建使用
-let baseUrl = process.env.NODE_ENV === 'development' ? '/' : './'
+// let baseUrl = process.env.NODE_ENV === 'development' ? '/' : './'
+let baseUrl = process.env.NODE_ENV === 'development' ? '/' : '/'
 module.exports = {
     baseUrl: baseUrl,
-    outputDir: 'docs',
+    outputDir: '../blog-server-leancloud/public/blog',
     lintOnSave: true,
     productionSourceMap: true,
     devServer: {
