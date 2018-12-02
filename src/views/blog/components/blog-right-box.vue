@@ -10,7 +10,7 @@
                 <span slot="right">dark</span>
             </switch-btn>
         </div>
-        <tag-list/>
+        <tag-list :tags="tags"/>
     </div>
 </template>
 
@@ -23,6 +23,14 @@
         components: { TagList, SwitchBtn },
         data () {
             return {
+            }
+        },
+        props: {
+            tags: {
+                type: Array,
+                default: function () {
+                    return []
+                }
             }
         },
         computed: {

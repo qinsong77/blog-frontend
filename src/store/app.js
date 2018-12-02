@@ -1,5 +1,6 @@
 const app = {
     state: {
+        Loading: false,
         showNav: false,
         theme: localStorage.getItem('theme') ? localStorage.getItem('theme') : 'theme-default'
     },
@@ -9,6 +10,12 @@ const app = {
         }
     },
     mutations: {
+        hideLoading (state) {
+            state.Loading = false
+        },
+        showLoading (state) {
+            state.Loading = true
+        },
         setShowNav (state) {
             state.showNav = !state.showNav
         },

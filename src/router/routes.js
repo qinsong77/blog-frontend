@@ -47,6 +47,11 @@ const routes = [
                         path: 'article/:id',
                         name: 'article',
                         component: () => import('_v/blog/articles/detail')
+                    },
+                    {
+                        path: 'article/tag/:id',
+                        name: 'tag',
+                        component: () => import('_v/blog/tag')
                     }
                 ]
             },

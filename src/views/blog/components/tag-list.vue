@@ -2,7 +2,7 @@
     <div class="tags-container">
         <ul>
             <li class="tag-li" v-for="tag in tags" :key="tag.id">
-                <a>
+                <a @click="toTagArticle(tag.id)">
                     {{tag.name}}
                 </a>
             </li>
@@ -15,23 +15,33 @@
         name: 'tag-list',
         data () {
             return {
-                tags: []
+            }
+        },
+        props: {
+            tags: {
+                type: Array,
+                default: function () {
+                    return []
+                }
             }
         },
         computed: {},
 
-        created () {
-            this.$Axios.get('/tag/all').then(res => {
-                if (res.result) {
-                    this.tags = res.content
-                }
-            })
-        },
-
         mounted () {
         },
 
-        methods: {}
+        methods: {
+            toTagArticle (id) {
+                if (id) {
+                    this.$router.push({
+                        name: 'tag',
+                        params: {
+                            id: id
+                        }
+                    })
+                }
+            }
+        }
     }
 </script>
 
@@ -46,10 +56,11 @@
             a{
                 display: inline-block;
                 background-color: $secondary-bg;
-                padding: 5px 10px 5px 3px;
+                padding: 7px 10px;
                 transition: $trans;
                 &:hover{
                     background: $secondary-bg-darken;
+                    box-shadow: $box-shadow;
                 }
                 >i{
                     margin-right: 3px;

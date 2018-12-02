@@ -5,6 +5,34 @@
 
             <li>
                 <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-Loading"></use>
+                </svg>
+                <div class="name">search</div>
+                <div class="fontclass">#icon-Loading</div>
+            </li>
+            <li>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-Loading-red"></use>
+                </svg>
+                <div class="name">search</div>
+                <div class="fontclass">#icon-Loading</div>
+            </li>
+            <li>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-loadingout"></use>
+                </svg>
+                <div class="name">search</div>
+                <div class="fontclass">#icon-loadingout</div>
+            </li>
+            <li>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-loading"></use>
+                </svg>
+                <div class="name">search</div>
+                <div class="fontclass">#icon-loading</div>
+            </li>
+            <li>
+                <svg class="icon" aria-hidden="true">
                     <use xlink:href="#icon-search1"></use>
                 </svg>
                 <div class="name">search</div>

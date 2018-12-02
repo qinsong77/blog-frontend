@@ -6,9 +6,9 @@
                 TOP LIST
             </div>
             <ul class="top-list">
-                <li v-for="(value,key,index) in items" :key="key">
+                <li v-for="(item,index) in hotList" :key="item.id">
                     <span class="index">{{index+1}}</span>
-                    <a>{{value}}</a>
+                    <a @click="toArticle(item.id)">{{item.title}}</a>
                 </li>
             </ul>
         </div>
@@ -18,14 +18,21 @@
 <script>
     export default {
         name: 'search-top-list',
+        props: ['hotList'],
         data () {
             return {
-                items: {
-                    'dsjfkas': '发贺卡1',
-                    'dsj1fkas': '发贺卡2',
-                    'dsjfekas': '发贺卡3',
-                    'dsjfkeas': '发贺卡4',
-                    'dsjfek2as': '发贺卡5'
+            }
+        },
+        methods: {
+            toArticle (id) {
+                console.log(id)
+                if (id) {
+                    this.$router.push({
+                        name: 'article',
+                        params: {
+                            id: id
+                        }
+                    })
                 }
             }
         }

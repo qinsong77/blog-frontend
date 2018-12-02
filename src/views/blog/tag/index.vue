@@ -1,5 +1,5 @@
 <template>
-    <div class="background">
+    <div class="recent">
         <template v-for="(item,index) in articles">
             <blog-article-link-card :data="item" :key="index"/>
         </template>
@@ -9,7 +9,7 @@
 <script>
     import BlogArticleLinkCard from '../components/blog-article-link-card'
     export default {
-        name: 'background',
+        name: 'tag',
         components: { BlogArticleLinkCard },
         data () {
             return {
@@ -17,9 +17,20 @@
             }
         },
         computed: {},
+        watch: {
+            '$route' (to, from) {
+                console.log(to)
+                this.$store.commit('showLoading')
+                this.$Axios.get('/article/query', { tag: to.params.id }).then(res => {
+                    if (res.result) {
+                        this.articles = res.content.data
+                    }
+                }).finally(() => { this.$store.commit('hideLoading') })
+            }
+        },
         created () {
             this.$store.commit('showLoading')
-            this.$Axios.get('/article/query', { dir: '5bee89c99f545400702630b5' }).then(res => {
+            this.$Axios.get('/article/query', { tag: this.$route.params.id }).then(res => {
                 if (res.result) {
                     this.articles = res.content.data
                 }
@@ -34,7 +45,7 @@
 </script>
 
 <style lang="scss">
-    .background{
-
+    .recent{
+        width: 100%;
     }
 </style>

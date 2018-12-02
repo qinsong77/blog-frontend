@@ -38,7 +38,7 @@
                 <icon icon="#icon-search1"/>
             </button>
         </div>
-        <search-top-list/>
+        <search-top-list :hotList="hotList"/>
     </div>
 </template>
 
@@ -53,6 +53,7 @@
                 search: ''
             }
         },
+        props: ['hotList'],
         computed: {},
 
         created () {

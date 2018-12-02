@@ -1,6 +1,9 @@
 import Axios from 'axios'
 
-const baseURL = '/blog/api'
+let baseURL = '/blog/api'
+if (process.env.NODE_ENV === 'production') {
+    baseURL = 'http://sysuke.leanapp.cn/blog/api'
+}
 const timeOut = 10000
 
 const fetch = (url, params, method = 'post') => {
