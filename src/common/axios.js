@@ -2,7 +2,7 @@ import Axios from 'axios'
 
 let baseURL = '/blog/api'
 if (process.env.NODE_ENV === 'production') {
-    baseURL = 'http://sysuke.leanapp.cn/blog/api'
+    baseURL = 'https://sysuke.leanapp.cn/blog/api'
 }
 const timeOut = 10000
 
